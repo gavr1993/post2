@@ -1,4 +1,4 @@
-package com.example.myapplication
+package com.example.firstPost
 
 data class Post (
     val id: Int,

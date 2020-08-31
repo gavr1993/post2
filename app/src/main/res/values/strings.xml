@@ -1,4 +1,8 @@
 <resources>
-    <string name="app_name">My Application</string>
-    <string name="date">27 Aug 2020</string>
+    <string name="app_name">firstPost</string>
+    <string name="_1">1</string>
+    <string name="liked">liked</string>
+    <string name="commented">commented</string>
+    <string name="shared">shared</string>
+    <string name="_0">0</string>
 </resources>

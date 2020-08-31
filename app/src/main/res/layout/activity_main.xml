@@ -12,8 +12,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="333dp"
         android:layout_marginTop="18dp"
-        android:layout_marginEnd="16dp"
-        android:text="@string/date"
+        android:layout_marginEnd="32dp"
+        android:text=""
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -24,7 +24,7 @@
         android:layout_height="37dp"
         android:layout_marginStart="18dp"
         android:layout_marginTop="16dp"
-        android:text="First post in our network!"
+        android:text=""
         android:textColor="#000000"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -32,44 +32,68 @@
         app:layout_constraintTop_toBottomOf="@+id/dateTv" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/likeImg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="128dp"
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/postTxt"
-        app:srcCompat="@drawable/not_liked" />
+        app:srcCompat="@drawable/not_liked"
+        android:contentDescription="@string/liked" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/comImg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
-        app:layout_constraintEnd_toStartOf="@+id/imageView3"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintEnd_toStartOf="@+id/shareImg"
+        app:layout_constraintStart_toEndOf="@+id/likeImg"
         app:layout_constraintTop_toBottomOf="@+id/postTxt"
-        app:srcCompat="@drawable/not_commented" />
+        app:srcCompat="@drawable/not_commented"
+        android:contentDescription="@string/commented" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/shareImg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintStart_toEndOf="@+id/comImg"
         app:layout_constraintTop_toBottomOf="@+id/postTxt"
-        app:srcCompat="@drawable/not_shared" />
+        app:srcCompat="@drawable/not_shared"
+        android:contentDescription="@string/shared" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/likeNmb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="1"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
+        android:text="@string/_0"
+        android:visibility="gone"
+        app:layout_constraintStart_toEndOf="@+id/likeImg"
+        app:layout_constraintTop_toBottomOf="@+id/postTxt" />
+
+    <TextView
+        android:id="@+id/comNmb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/_0"
+        android:visibility="gone"
+        app:layout_constraintStart_toEndOf="@+id/comImg"
+        app:layout_constraintTop_toBottomOf="@+id/postTxt" />
+
+    <TextView
+        android:id="@+id/shareNmb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/_0"
+        android:visibility="gone"
+        app:layout_constraintStart_toEndOf="@+id/shareImg"
         app:layout_constraintTop_toBottomOf="@+id/postTxt" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
