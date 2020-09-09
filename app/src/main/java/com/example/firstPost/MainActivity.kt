@@ -24,6 +24,7 @@ class MainActivity : AppCompatActivity() {
 
         postTxt.text = post.content
         dateTv.text = post.created
+        authTv.text = post.author
 
         if (post.likedByMe) {
             likeImg.setImageResource(R.drawable.liked)
