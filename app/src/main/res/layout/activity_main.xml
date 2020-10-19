@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
@@ -34,16 +33,15 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
-        <ImageView
-            android:id="@+id/likeImg"
+        <ImageButton
+            android:id="@+id/likeBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="128dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:contentDescription="@string/liked"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/postTxt"
-            app:srcCompat="@drawable/not_liked" />
+            app:layout_constraintTop_toBottomOf="@+id/postTxt" />
 
         <ImageView
             android:id="@+id/comImg"
@@ -54,7 +52,7 @@
             android:layout_marginEnd="32dp"
             android:contentDescription="@string/commented"
             app:layout_constraintEnd_toStartOf="@+id/shareImg"
-            app:layout_constraintStart_toEndOf="@+id/likeImg"
+            app:layout_constraintStart_toEndOf="@+id/likeBtn"
             app:layout_constraintTop_toBottomOf="@+id/postTxt"
             app:srcCompat="@drawable/not_commented" />
 
@@ -76,7 +74,7 @@
             android:layout_marginTop="16dp"
             android:text="@string/_0"
             android:visibility="gone"
-            app:layout_constraintStart_toEndOf="@+id/likeImg"
+            app:layout_constraintStart_toEndOf="@+id/likeBtn"
             app:layout_constraintTop_toBottomOf="@+id/postTxt" />
 
         <TextView

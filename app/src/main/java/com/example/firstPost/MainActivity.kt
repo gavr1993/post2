@@ -1,10 +1,10 @@
 package com.example.firstPost
 
 import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
+import android.view.View.INVISIBLE
 import android.view.View.VISIBLE
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -26,8 +26,23 @@ class MainActivity : AppCompatActivity() {
         dateTv.text = post.created
         authTv.text = post.author
 
+        likeBtn.setOnClickListener {
+            post.likedByMe = !post.likedByMe
+            if (post.likedByMe) {
+                likeNmb.visibility = VISIBLE
+                likeNmb.text = "1"
+                likeNmb.setTextColor(Color.RED)
+            } else {
+                likeNmb.visibility = INVISIBLE
+            }
+            likeBtn.setImageResource(
+                if (post.likedByMe) R.drawable.liked
+                else R.drawable.not_liked
+            )
+        }
+
         if (post.likedByMe) {
-            likeImg.setImageResource(R.drawable.liked)
+            likeBtn.setImageResource(R.drawable.liked)
             likeNmb.text = "1"
             likeNmb.setTextColor(Color.RED)
             likeNmb.visibility = VISIBLE
