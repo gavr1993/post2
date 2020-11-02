@@ -1,6 +1,8 @@
 package com.example.firstPost
 
+import android.content.Intent
 import android.graphics.Color
+import android.net.Uri
 import android.os.Bundle
 import android.view.View.INVISIBLE
 import android.view.View.VISIBLE
@@ -17,6 +19,7 @@ class MainActivity : AppCompatActivity() {
             "Anton",
             "First post in our network!",
             "31 august 2020",
+            "Uzhnaya street, 15",
             likedByMe = true,
             commentedByMe = true,
             sharedByMe = true
@@ -25,6 +28,7 @@ class MainActivity : AppCompatActivity() {
         postTxt.text = post.content
         dateTv.text = post.created
         authTv.text = post.author
+        val (lat, lon) = post.location
 
         likeBtn.setOnClickListener {
             post.likedByMe = !post.likedByMe
@@ -39,6 +43,14 @@ class MainActivity : AppCompatActivity() {
                 if (post.likedByMe) R.drawable.liked
                 else R.drawable.not_liked
             )
+        }
+
+        locationBtn.setOnClickListener {
+            val intent = Intent().apply {
+                action = Intent.ACTION_VIEW
+                data = Uri.parse("geo:$lat,$lon")
+            }
+            startActivity(intent)
         }
 
         if (post.likedByMe) {
