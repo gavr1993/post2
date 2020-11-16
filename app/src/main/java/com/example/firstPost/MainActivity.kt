@@ -2,17 +2,27 @@ package com.example.firstPost
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import kotlinx.android.synthetic.main.post_item.view.*
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.post_item)
 
         val list = mutableListOf(
             Post(1, "Anton", "First post in our network!", "31 august 2020", "Uzhnaya street, 15"),
             Post(1, "Alex", "Second post in our network.", "11 november 2020", "Lenina street, 17"),
             Post(3, "Igor", "Wow!", "12 november 2020", "Central street, 17")
         )
+
+        list.forEach {
+            val view = layoutInflater.inflate(R.layout.post_item, root, false).apply {
+                postTxt.text = it.content
+                dateTv.text = it.content
+                authTv.text = it.content
+
+            }
+        }
 
         with(container) {
             layoutManager = LinearLayoutManager(this@MainActivity)
