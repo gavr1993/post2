@@ -9,7 +9,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.post_item)
 
-        val list = mutableListOf(
+        val list = listOf(
             Post(1, "Anton", "First post in our network!", "31 august 2020", "Uzhnaya street, 15"),
             Post(1, "Alex", "Second post in our network.", "11 november 2020", "Lenina street, 17"),
             Post(3, "Igor", "Wow!", "12 november 2020", "Central street, 17")
