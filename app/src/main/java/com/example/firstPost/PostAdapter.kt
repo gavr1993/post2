@@ -1,3 +1,4 @@
+
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -5,8 +6,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.firstPost.Post
 import com.example.firstPost.R
 import kotlinx.android.synthetic.main.post_item.view.*
+import java.util.*
 
 class PostAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+    private var list: List<Post> = ArrayList()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return PostViewHolder(
             LayoutInflater.from(parent.context).inflate(R.layout.post_item, parent, false)
@@ -20,7 +23,7 @@ class PostAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when (holder) {
             is PostViewHolder -> {
-                holder.bind()
+                holder.bind(list[position])
             }
         }
     }
