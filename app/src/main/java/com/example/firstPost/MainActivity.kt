@@ -1,6 +1,5 @@
 package com.example.firstPost
 
-import PostAdapter
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -10,10 +9,22 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val list = listOf(
-            Post(1, "Anton", "First post in our network!", "31 august 2020", "Uzhnaya street, 15"),
-            Post(1, "Alex", "Second post in our network.", "11 november 2020", "Lenina street, 17"),
-            Post(3, "Igor", "Wow!", "12 november 2020", "Central street, 17")
+            Post(
+                1, "Anton", "First post in our network!",
+                "31 august 2020", "Uzhnaya street, 15",
+                likedByMe = false, commentedByMe = false, sharedByMe = false
+            ),
+            Post(
+                2, "Alex", "Second post in our network.",
+                "11 november 2020", "Lenina street, 17"
+            ),
+            Post(
+                3, "Igor", "Wow!", "12 november 2020",
+                "Central street, 17",
+                likedByMe = false, commentedByMe = false, sharedByMe = false
+            )
         )
+
         with(container) {
             layoutManager = LinearLayoutManager(this@MainActivity)
             adapter = PostAdapter().apply {

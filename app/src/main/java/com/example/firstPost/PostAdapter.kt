@@ -13,7 +13,6 @@ class PostAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
             LayoutInflater.from(parent.context).inflate(R.layout.post_item, parent, false)
         )
     }
-
     override fun getItemCount(): Int {
         return list.size
     }
