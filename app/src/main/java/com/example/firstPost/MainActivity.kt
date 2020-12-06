@@ -10,16 +10,32 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
         super.onCreate(savedInstanceState)
         val list = listOf(
             Post(
-                1, "Anton", null, "First post in our network!",
-                "31 august 2020", null,
-                likedByMe = false, commentedByMe = false, sharedByMe = false, location = null,
-                link = null, type = PostType.POST
+                1,
+                "Anton",
+                null,
+                "First post in our network!",
+                "31 august 2020",
+                null,
+                likedByMe = false,
+                commentedByMe = false,
+                sharedByMe = false,
+                location = 52.13588989227583 to 26.10130046994913,
+                link = null,
+                type = PostType.POST
             ),
             Post(
-                2, "Anton", "Alex", "First post in our network!",
-                "31 august 2020", null,
-                likedByMe = false, commentedByMe = false, sharedByMe = false, location = null,
-                link = null, type = PostType.REPOST
+                2,
+                "Anton",
+                "Alex",
+                "First post in our network!",
+                "31 august 2020",
+                null,
+                likedByMe = false,
+                commentedByMe = false,
+                sharedByMe = false,
+                location = 52.13588989227583 to 26.10130046994913,
+                link = null,
+                type = PostType.REPOST
             ),
             Post(
                 3,
@@ -36,16 +52,32 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
                 type = PostType.EVENT
             ),
             Post(
-                4, "Inna", null, "Look!",
-                "02 september 2020", null, null,
-                likedByMe = false, commentedByMe = false, sharedByMe = false,
-                link = "https://www.youtube.com/watch?v=yqxkr_c6QJw", type = PostType.VIDEO
+                4,
+                "Inna",
+                null,
+                "Watch this!",
+                "02 september 2020",
+                null,
+                52.13588989227583 to 26.10130046994913,
+                likedByMe = false,
+                commentedByMe = false,
+                sharedByMe = false,
+                link = "https://www.youtube.com/watch?v=yqxkr_c6QJw",
+                type = PostType.VIDEO
             ),
             Post(
-                5, "RAM.BY", null, "Everything for PC!",
-                "03 september 2020", null, null,
-                likedByMe = false, commentedByMe = false, sharedByMe = false,
-                link = "https://ram.by/", type = PostType.COMMERCIAL
+                5,
+                "RAM.BY",
+                null,
+                "Everything for PC!",
+                "03 september 2020",
+                null,
+                52.13588989227583 to 26.10130046994913,
+                likedByMe = false,
+                commentedByMe = false,
+                sharedByMe = false,
+                link = "https://ram.by/",
+                type = PostType.COMMERCIAL
             )
         )
 

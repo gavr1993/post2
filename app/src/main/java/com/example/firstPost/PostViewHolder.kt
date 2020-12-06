@@ -1,10 +1,14 @@
+import android.annotation.SuppressLint
+import android.content.Intent
 import android.graphics.Color
+import android.net.Uri
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.example.firstPost.Post
 import com.example.firstPost.PostType
 import com.example.firstPost.R
 import kotlinx.android.synthetic.main.post_item.view.*
+
 
 class PostViewHolder
 constructor(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -18,13 +22,52 @@ constructor(itemView: View) : RecyclerView.ViewHolder(itemView) {
     val comNmb = itemView.comNmb
     val shareBtn = itemView.shareBtn
     val shareNmb = itemView.shareNmb
+    val locBtn = itemView.locationBtn
+    val address = itemView.address
+    val play = itemView.playBtn
+    val link = itemView.linkBtn
 
+    @SuppressLint("SetTextI18n")
     fun bind(post: Post) {
         author.text = post.author
         date.text = post.created
         text.text = post.content
-        if (post.type = PostType.REPOST) {
 
+        if (post.type == PostType.REPOST) {
+            repAuth.visibility = View.VISIBLE
+            repAuth.text = post.repostAuthor + " reposted:"
+        }
+        if (post.type == PostType.EVENT) {
+            address.visibility = View.VISIBLE
+            address.text = post.address
+            locBtn.visibility = View.VISIBLE
+            locBtn.setOnClickListener {
+                val (lat, lon) = post.location
+                val intent = Intent().apply {
+                    action = Intent.ACTION_VIEW
+                    data = Uri.parse("geo:$lat,$lon")
+                }
+                it.context.startActivity(intent)
+            }
+        }
+
+        if (post.type == PostType.VIDEO) {
+            play.visibility = View.VISIBLE
+            play.setOnClickListener {
+                val browserIntent = Intent(
+                    Intent.ACTION_VIEW,
+                    Uri.parse("https://www.youtube.com/watch?v=yqxkr_c6QJw&t=326s")
+                )
+                it.context.startActivity(browserIntent)
+            }
+        }
+
+        if (post.type == PostType.COMMERCIAL) {
+            link.visibility = View.VISIBLE
+            play.setOnClickListener {
+                val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://ram.by/"))
+                it.context.startActivity(browserIntent)
+            }
         }
 
         likeBtn.setOnClickListener {

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -67,6 +68,18 @@
             app:layout_constraintTop_toBottomOf="@+id/postTxt"
             app:srcCompat="@drawable/not_shared" />
 
+        <ImageButton
+            android:id="@+id/locationBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:contentDescription="@string/geolocation"
+            android:visibility="gone"
+            app:layout_constraintStart_toEndOf="@+id/shareBtn"
+            app:layout_constraintTop_toBottomOf="@+id/postTxt"
+            app:srcCompat="@drawable/location" />
+
         <TextView
             android:id="@+id/likeNmb"
             android:layout_width="wrap_content"
@@ -128,6 +141,38 @@
             android:visibility="gone"
             app:layout_constraintBottom_toTopOf="@id/dateTv"
             app:layout_constraintLeft_toRightOf="@id/imageView" />
+
+        <TextView
+            android:id="@+id/address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:text=""
+            android:visibility="gone"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/postTxt" />
+
+        <ImageButton
+            android:id="@+id/playBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/todo"
+            android:visibility="gone"
+            app:layout_constraintStart_toEndOf="@id/postTxt"
+            app:layout_constraintTop_toBottomOf="@id/authTv"
+            app:srcCompat="@android:drawable/ic_media_play"
+            tools:layout_editor_absoluteX="68dp"
+            tools:layout_editor_absoluteY="63dp" />
+
+        <Button
+            android:id="@+id/linkBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/go_to_web_site"
+            android:visibility="gone"
+            app:layout_constraintStart_toEndOf="@id/postTxt"
+            app:layout_constraintTop_toBottomOf="@id/authTv" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>

@@ -7,7 +7,7 @@ data class Post(
     val content: String,
     val created: String,
     val address: String?,
-    val location: Pair<Double, Double>? = 52.109212 to 26.055569,
+    val location: Pair<Double?, Double?>,
     var likedByMe: Boolean = false,
     var commentedByMe: Boolean = false,
     var sharedByMe: Boolean = false,

@@ -8,4 +8,6 @@
     <string name="avatar">avatar</string>
     <string name="geolocation">geolocation</string>
     <string name="repost">repost:</string>
+    <string name="todo">TODO</string>
+    <string name="go_to_web_site">GO TO WEB-SITE</string>
 </resources>
