@@ -7,4 +7,5 @@
     <string name="_0">0</string>
     <string name="avatar">avatar</string>
     <string name="geolocation">geolocation</string>
+    <string name="repost">repost:</string>
 </resources>
