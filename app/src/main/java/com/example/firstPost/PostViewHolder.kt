@@ -36,6 +36,8 @@ constructor(itemView: View) : RecyclerView.ViewHolder(itemView) {
         if (post.type == PostType.REPOST) {
             repAuth.visibility = View.VISIBLE
             repAuth.text = post.repostAuthor + " reposted:"
+        } else {
+            repAuth.visibility = View.INVISIBLE
         }
         if (post.type == PostType.EVENT) {
             address.visibility = View.VISIBLE
@@ -49,6 +51,9 @@ constructor(itemView: View) : RecyclerView.ViewHolder(itemView) {
                 }
                 it.context.startActivity(intent)
             }
+        } else {
+            address.visibility = View.INVISIBLE
+            locBtn.visibility = View.INVISIBLE
         }
 
         if (post.type == PostType.VIDEO) {
@@ -60,14 +65,17 @@ constructor(itemView: View) : RecyclerView.ViewHolder(itemView) {
                 )
                 it.context.startActivity(browserIntent)
             }
+        } else {
+            play.visibility = View.INVISIBLE
         }
-
         if (post.type == PostType.COMMERCIAL) {
             link.visibility = View.VISIBLE
             play.setOnClickListener {
                 val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://ram.by/"))
                 it.context.startActivity(browserIntent)
             }
+        } else {
+            link.visibility = View.INVISIBLE
         }
 
         likeBtn.setOnClickListener {
